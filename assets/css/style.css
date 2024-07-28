@@ -79,3 +79,25 @@ body {
     box-sizing: content-box;
     place-items: center;
 }
+
+@media (max-width: 1920px) {
+
+  #game {
+      display: none;
+  }
+
+  #no-game {
+    display: block;
+  }
+
+}
+
+@media (min-width: 1920px) {
+  
+  #no-game {
+      font-size: 20px;
+  }
+  #game {
+    display: block;
+  }
+}

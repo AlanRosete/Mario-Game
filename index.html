@@ -17,6 +17,30 @@
       <img id="gif-shadow" src="assets/others/loading.gif" alt="Loading animation shadow" class="loading-gif">
     </div>
 
+    <div id="no-game">
+      <h1>ONLY GAME RESOLUTION 1920X1080</h1>
+    </div>
+
+    <script>
+
+    function checkResolutionAndToggleKeyboard() {
+      if (window.innerWidth < 1920 || window.innerHeight < 1080) {
+        document.addEventListener('keydown', disableKeys);
+      } else {
+        document.removeEventListener('keydown', disableKeys);
+      }
+    }
+
+    function disableKeys(event) {
+      event.preventDefault();
+    }
+
+    checkResolutionAndToggleKeyboard();
+
+    window.addEventListener('resize', checkResolutionAndToggleKeyboard);
+
+    </script>
+
     <noscript>
       <div class="blurbg">
         <div class="alertpopup">
