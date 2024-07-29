@@ -22,23 +22,20 @@
     </div>
 
     <script>
-
-    function checkResolutionAndToggleKeyboard() {
-      if (window.innerWidth < 1920 || window.innerHeight < 1080) {
-        document.addEventListener('keydown', disableKeys);
-      } else {
-        document.removeEventListener('keydown', disableKeys);
+      function checkResolutionAndToggleKeyboard() {
+        if (window.innerWidth < 1920 || window.innerHeight < 1080) {
+          document.addEventListener('keydown', disableKeys);
+        } else {
+          document.removeEventListener('keydown', disableKeys,false);
+        }
       }
-    }
-
-    function disableKeys(event) {
-      event.preventDefault();
-    }
-
-    checkResolutionAndToggleKeyboard();
-
-    window.addEventListener('resize', checkResolutionAndToggleKeyboard);
-
+      function disableKeys(event) {
+        event.preventDefault();
+      }
+    
+      checkResolutionAndToggleKeyboard();
+    
+      window.addEventListener('resize', checkResolutionAndToggleKeyboard);
     </script>
 
     <noscript>
